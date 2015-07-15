@@ -111,3 +111,5 @@ plot average number of steps taken VS weekday days or weekend days:
 stepmeanintweek=aggregate(steps~interval+week,xdays,mean,na.rm=T)
 ggplot(stepmeanintweek,aes(interval,steps))+geom_line()+ggtitle("Average Number of Steps VS 5-minute intervals")+facet_grid(.~week)
 ```
+
+people seem to be more active during weekends.

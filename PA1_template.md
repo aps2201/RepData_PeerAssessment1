@@ -220,3 +220,5 @@ ggplot(stepmeanintweek,aes(interval,steps))+geom_line()+ggtitle("Average Number 
 ```
 
 ![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
+
+people seem to be more active during weekends.
