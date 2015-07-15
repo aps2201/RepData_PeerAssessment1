@@ -7,12 +7,14 @@ output:
 
 
 ## Loading and preprocessing the data
+First, we load all libraries and data that we will use:
 
 ```r
 library(ggplot2)
 library(dplyr)
 unzip("activity.zip")
 x=read.csv("activity.csv")
+#make sure the date si in Date format
 x$date=(as.Date(as.character(x$date),"%Y-%m-%d"))
 ```
 
@@ -120,8 +122,9 @@ ggplot(stepmeanint,aes(interval,steps))+geom_line()+ggtitle("Average Number of S
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
+there seems to be a spike in the lower end of the interval.
 
-Interval containing maximum average number of steps is 
+We can see which one this is by looking at the interval containing maximum average number of steps, which is :
 
 ```r
 maxintrow=which(stepmeanint$steps==max(stepmeanint$steps))
@@ -132,7 +135,7 @@ stepmeanint[maxintrow,1]
 ## [1] 835
 ```
 
-this is the whole row
+this is what the whole row looks like
 
 ```r
 stepmeanint[maxintrow,]
@@ -221,4 +224,4 @@ ggplot(stepmeanintweek,aes(interval,steps))+geom_line()+ggtitle("Average Number 
 
 ![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
 
-people seem to be more active during weekends.
+people seem to be more active overall during weekends.
